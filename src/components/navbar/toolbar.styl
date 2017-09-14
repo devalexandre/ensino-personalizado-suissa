@@ -4,6 +4,16 @@
    height 5vh
    background-color $toolbar-background
    color #ffffff
+   .atom-toolbar-control
+      background: none !important;
+      color: inherit;
+      border: none;
+      padding: 0! important;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit !important;  
+      width 10
+       
    .atom-navbar
       display flex
       width 100%
@@ -14,13 +24,27 @@
          a 
             text-decoration none
             color #ffffff
-      .atom-navbar-group
+      .molecule-navbar-items
          display flex
          justify-content flex-end    
-         width 80% 
+         align-self: flex-end
+         width auto 
          list-style none
       .atom-navbar-item
          width: 5vw
          a 
             text-decoration none
             color #ffffff
+
+
++for_breakpoint(desktop)
+   .atom-toolbar-control
+      display none
+
+   
++for_breakpoint(mobile)
+   .atom-toolbar-control
+      display block
+   .atom-navba
+      flex-direction row
+      justify-content center

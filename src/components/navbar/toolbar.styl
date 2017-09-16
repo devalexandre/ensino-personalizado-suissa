@@ -4,45 +4,37 @@
    height 5vh
    color #ffffff
    background-color $toolbar-background
-   .atom-toolbar-control
-      background none !important
-	  color inherit
-	  border none
-	  padding 0! important
-	  font inherit
-	  cursor pointer
-	  outline inherit !important
-	  width 10
-	 .atom-navbar-title
-		width 10vw
-		line-height 3vw
-		a
-		   text-decoration none
-		   color #ffffff
-
-		.molecule-navbar-items
-		    display flex
-			justify-content flex-end
-			align-self flex-end
-			width 200vh
-			list-style none
-			.atom-navbar-item
-			   width 5vw
-		   a
-		      text-decoration none
-			  color #ffffff
-
-
-+for_breakpoint(desktop)
-   .atom-toolbar-control
-      display none
-
-
-+for_breakpoint(mobile)
-   .atom-toolbar-control
-      display block
-   .molecule-navbar-item
-	  flex-direction column
+  .atom-toolbar-control
+    background none !important
+    color inherit
+    border none
+    padding 0! important
+    font inherit
+    cursor pointer
+    outline inherit !important
+    width 10
+    @media $desktop
+       display none
+    @media $mobile
+       display block
+   .atom-navbar-title
+	width 10vw
+	line-height 3vw
+	a
+	  text-decoration none
+	  color #ffffff
+.molecule-navbar-items
+   display flex
+   justify-content flex-end
+   align-self flex-end
+   width 200vh
+   list-style none
+   .atom-navbar-item
+      width 5vw
+      @media $mobile
+        flex-direction column
 	  width 100%
-	  justify-content center
-			
+        justify-content center 
+      a
+         text-decoration none
+         color #ffffff

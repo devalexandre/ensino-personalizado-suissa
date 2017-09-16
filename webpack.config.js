@@ -1,7 +1,9 @@
 'use strict'
 
-const path = require('path')
+const path = require('path');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     template: './index.html',
     filename: 'index.html',
@@ -30,9 +32,18 @@ module.exports = {
                 test: /\.styl$/,
                 exclude: /node_modules/,
                 include: /src/,
+                loader: 'stylint-loader'
+            },
+            {
+                test: /\.styl$/,
+                exclude: /node_modules/,
+                include: /src/,
                 loader: 'style-loader!css-loader!stylus-loader'
-            }
+            },
+
+
         ]
+
     }
 
 }
